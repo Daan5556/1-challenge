@@ -16,3 +16,5 @@
 - Read datasheet of Raspberry and Arduino boards to make comparison.
 - Read datasheet of ESP32 and finished device comparison.
 - Played around with access point.
+
+- Research edge gateways + comparison.

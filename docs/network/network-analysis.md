@@ -1,5 +1,10 @@
 # Network Analysis
 
+**Author:** Daan Eggen  
+**Date:** 28/02/2026
+
+---
+
 To ensure success for the "Safe Springfield" initiative I need to setup a
 network of sensors, monitoring activity throughout the city. The sensor data
 should be stored on a central service for monitoring. This document will go over
@@ -64,7 +69,46 @@ Arduino Nano, and 32 GPIOs, more than plenty for the sensor data. This board is
 also the cheapest option, so I think it would be an excellent choice for my
 project.
 
-### Edge gateways
+## Edge gateways
+
+- Broker to broker bridge
+
+The requirements state that the sensors need to cover a large area and need to
+be very reliable. To make this happen, I decided to introduce **Edge Gateways**.
+These devices will sit between the edge devices and the central server. These
+devices are able to filter and buffer messages, and they can even add data do
+the messages, like timestamps.
+
+For my network, I would like an edge gateway on every intersection of the city.
+They are expected to handle messages of 5-10 edge devices. They will be a host
+access point for the edge devices, and send the messages securely over the
+internet to the central server.
+
+In this section I will compare 2 possible edge gateways.
+
+### SIMATIC IOT2040
+
+With 10 Ethernet ports, 1GB of RAM, and extendable mass storage this machine is
+well up for the task of data processing. However, there are a few issues. The
+operating temperature is 0-50°C. According to Springfield's climate, this would
+not suffice. I have to use a custom case for the machine to prevent it from
+getting to cold, which is not ideal. Furthermore, this device is not equipped
+with LTE networking (4G/5G cellular). The city does not have Wi-Fi coverage
+everywhere, so to enable networking capabilities I would need an additional
+device to this one or implement custom infrastructure.
+
+These downsides are very unpractical to work around, so I think it would be best
+to consider another option.
+
+### InHand IG902
+
+The **InGateway902** has really great operation conditions. It can sustain
+temperature limits of -25°C to 70°C. Humidity limits are also really good:
+5-90%.
+
+But most importantly: this device has cellular networking capabilities. This
+allows me to use it as an MQTT broker, served over Wi-Fi as an access point, and
+relaying the incoming messages to the central server using 4G/5G.
 
 ## Protocols
 
