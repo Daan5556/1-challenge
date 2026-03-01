@@ -151,3 +151,8 @@ a reliable method of doing it. So, for more granular control, it would be best
 to use MQTT from gateway to central server.
 
 ## Conclusion
+
+During this research, I had to consider a lot of technologies that were new to
+me. Also, the hardware was pretty unfamiliar to me. Overall, I had a fun time
+exploring this new avenue. After these considerations, I think I'm well prepared
+to design a stable and cost effective network!

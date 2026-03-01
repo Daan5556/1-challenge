@@ -22,3 +22,5 @@
 01/03/2026
 
 - Protocol research and documentation.
+- Proof read of network analysis.
+- Conclusion network analysis.
