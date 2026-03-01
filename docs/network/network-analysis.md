@@ -10,16 +10,19 @@ network of sensors, monitoring activity throughout the city. The sensor data
 should be stored on a central service for monitoring. This document will go over
 the requirements of the network.
 
-| Abbreviation | Meaning                      |
-| ------------ | ---------------------------- |
-| SOC          | System on Chip               |
-| GPIO         | General-Purpose Input/Output |
+| Abbreviation | Meaning                         |
+| ------------ | ------------------------------- |
+| SOC          | System on Chip                  |
+| GPIO         | General-Purpose Input/Output    |
+| HTTP         | Hyper Text Transfer Protocol    |
+| MQTT         | Message Que Telemetry Transport |
+| IoT          | Internet of Things              |
 
 ## Background
 
 ![Springfield](../assets/springfield_panoramic.png)
 
-Springfield is a town of 50.000 residents. The local authority wants to get an
+Springfield is a town of ~50.000 residents. The local authority wants to get an
 insight on traffic, air quality, noise pollution and punctuality of public
 transport. They want to monitor this data from a secure easy to use platform. To
 collect the all of the activity, I need a lot of sensors spread out over a large
@@ -71,8 +74,6 @@ project.
 
 ## Edge gateways
 
-- Broker to broker bridge
-
 The requirements state that the sensors need to cover a large area and need to
 be very reliable. To make this happen, I decided to introduce **Edge Gateways**.
 These devices will sit between the edge devices and the central server. These
@@ -112,4 +113,43 @@ relaying the incoming messages to the central server using 4G/5G.
 
 ## Protocols
 
-## Network diagram
+Now that I have my edge devices and gateways, its time to select a protocol to
+use. According to the requirements, a transient network error must not lead to
+data loss. So, ideally I would use a protocol that has built in retry logic. In
+the next section I'm going to compare protocols to use on the gateways and on
+the central server.
+
+### HTTP
+
+HTTP uses a request/response model. In practice this would mean that an edge
+devices makes an request to the gateway with the sensor data. There is some
+overhead with this protocol, every request has headers and repeated handshakes.
+Its not that efficient for tiny payloads at high frequency. So even tough HTTP
+is a popular protocol with implementations built in every standard library of
+every programming language, its sub optimal for this use case, and I'm going to
+decide on something else.
+
+### MQTT
+
+This protocol is specifically built for IoT! It has a publish/subscribe model,
+so servers can also send messages to clients. The protocol has a retry policy,
+so even when the server is temporary unavailable, the client can buffer the
+messages, and resend them after a while. The server can even track if a client
+has disconnected, this is really helpful to monitor the network. I can even use
+broker clustering. This means that when a gateway goes down, the clients can
+reconnect to another gateway, this way I can ensure that no messages are lost.
+
+Given these advantages, I think that this protocol is an excellent choice for
+edge device to gateway communication. But what about gateway to central server
+communication?
+
+Because the connection between the gateway and central server is may more
+stable. I can consider using HTTP again. This would enable to create a server
+architecture with load balancing. In general, HTTP has a strong ecosystem. This
+would make for easier development and debugging. However, due to the
+client/server model, it makes it difficult for the server to push new data to
+the client. If I want to update configuration from the server, I would not have
+a reliable method of doing it. So, more granular control, it would be best to
+use MQTT from gateway to central server.
+
+## Decisions made

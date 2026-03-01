@@ -18,3 +18,7 @@
 - Played around with access point.
 
 - Research edge gateways + comparison.
+
+01/03/2026
+
+- Protocol research and documentation.
