@@ -28,14 +28,21 @@ spread out over a large area. This asks for a stable network!
 
 ## Requirements
 
-- The network has to be private. Only authorized devices can connect.
-- A single point of failure must not lead to data loss.
-- The network must have an uptime of 99%.
+- Only devices registered in the authorized device list and authenticated
+  through network access control may connect to the network.
+- The nodes on the network should be able to buffer messages. When a network
+  error occurs, it should not lead to data loss.
+- The network must have an uptime of 99% per calendar month. This is measured
+  using automated monitoring.
 
 ## Devices
 
 In this section I'm going to analyse different edge devices to connect to the
-sensors. I'm looking for a reliable, compact and cost effective device.
+sensors. I'm looking for a reliable, compact and cost effective device which has
+to;
+
+- Collect data from sensors and convert this data in a standard digital format.
+- Be able to transmit this data to a gateway using a supported protocol.
 
 ### Raspberry Pi 5
 
