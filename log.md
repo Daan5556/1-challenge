@@ -24,3 +24,5 @@
 - Protocol research and documentation.
 - Proof read of network analysis.
 - Conclusion network analysis.
+
+- Network addressing and subnetting research.
