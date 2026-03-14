@@ -28,12 +28,14 @@ spread out over a large area. This asks for a stable network!
 
 ## Requirements
 
-- Only devices registered in the authorized device list and authenticated
-  through network access control may connect to the network.
-- The nodes on the network should be able to buffer messages. When a network
-  error occurs, it should not lead to data loss.
-- The network must have an uptime of 99% per calendar month. This is measured
-  using automated monitoring.
+- Each network node shall locally buffer outgoing messages in persistent storage
+  when connectivity to the broker or network is unavailable and automatically
+  retransmit them upon reconnection to ensure no messages are lost during
+  temporary network failures.
+- The network infrastructure shall maintain at least 99% availability per
+  calendar month, measured by automated monitoring that performs connectivity
+  checks at regular intervals and records any periods where the broker or
+  network endpoints are unreachable.
 
 ## Devices
 
