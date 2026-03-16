@@ -2,9 +2,9 @@
 
 24/02/2026
 
-- Divided into groups
-- Explanation of combined semesters
-- Portfolio intro
+- Divided into groups.
+- Explanation of combined semesters.
+- Portfolio intro.
 
 26/02/2026
 
@@ -26,3 +26,22 @@
 - Conclusion network analysis.
 
 - Network addressing and subnetting research.
+
+12/03/2026
+
+- Setup portfolio.
+- Document: Professional IT Products.
+- Document: Professional Standard.
+
+13/03/2026
+
+- Document: Personal leadership
+
+14/03/2026
+
+- Handled feedback network analysis.
+
+15/03/2026
+
+- Created sensor id script
+- Created docs for portfolio
