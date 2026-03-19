@@ -1,7 +1,8 @@
 # Network Analysis
 
 **Author:** Daan Eggen  
-**Date:** 28/02/2026
+**Date:** 28/02/2026  
+**Version: 2.0**
 
 ---
 
@@ -20,11 +21,11 @@ will also explore different configurations and compare them.
 
 ![Springfield](../assets/springfield_panoramic.png)
 
-Springfield is a town of ~50.000 residents. The local authority wants to get an
-insight on traffic, air quality, noise pollution and punctuality of public
-transport in the city. They want to monitor this data using a secure and easy to
-use platform. To collect data from all these activities, I need a lot of sensors
-spread out over a large area. This asks for a stable network!
+Springfield is a town of ~50.000[^springfield] residents. The local authority
+wants to get an insight on traffic, air quality, noise pollution and punctuality
+of public transport in the city. They want to monitor this data using a secure
+and easy to use platform. To collect data from all these activities, I need a
+lot of sensors spread out over a large area. This asks for a stable network!
 
 ## Requirements
 
@@ -46,7 +47,7 @@ to;
 - Collect data from sensors and convert this data in a standard digital format.
 - Be able to transmit this data to a gateway using a supported protocol.
 
-### Raspberry Pi 5
+### Raspberry Pi 5 [^rpi]
 
 This computer has a dedicated Wi-Fi module, which will greatly improve the
 stability of the network. This way, we I can even connect it directly to the
@@ -58,7 +59,7 @@ footprint, making it hard to use it in small spaces. The specs of this machine
 are a little overkill for reading some sensor data, so it might be wise to see
 other options.
 
-### Arduino Nano 33
+### Arduino Nano 33 [^arduino]
 
 This board is equipped with the capable **ATmega328 microcontroller**. This chip
 is very energy efficient. And it even has sleep modes, making it even draw less
@@ -71,7 +72,7 @@ The downside of this board is that it doesn't have wireless communication like
 Wi-Fi or Bluetooth. To connect this to the network I would have to use USB. This
 is not practical due to the location of the sensors I need to gather data from.
 
-### ESP32
+### ESP32 [^esp]
 
 So, this SOC has an 32-bit microprocessor, 512KB of RAM, and wireless
 capabilities with Wi-Fi and Bluetooth! It has the same thermal limits as the
@@ -94,7 +95,7 @@ internet to the central server.
 
 In this section I will compare 2 possible edge gateways.
 
-### SIMATIC IOT2040
+### SIMATIC IOT2040 [^SIMATIC]
 
 With 10 Ethernet ports, 1GB of RAM, and extendable mass storage this machine is
 well up for the task of data processing. However, there are a few issues. The
@@ -108,7 +109,7 @@ additional device to this one or implement custom networking infrastructure.
 These downsides are very unpractical to work around, so I think it would be best
 to consider another option.
 
-### InHand IG902
+### InHand IG902 [^inhand]
 
 The **InGateway902** has really great operation conditions. It can sustain
 temperature limits of -25°C to 70°C. Humidity limits are also really good:
@@ -136,7 +137,7 @@ tough HTTP is a popular protocol with implementations built in standard
 libraries of most programming languages, its sub optimal for this use case, and
 I'm going to decide on something else.
 
-### MQTT
+### MQTT [^mqtt]
 
 This protocol is specifically built for IoT! It has a publish/subscribe model,
 so servers can also send messages to clients. The protocol has a retry policy,
@@ -165,3 +166,19 @@ During this research, I had to consider a lot of technologies that were new to
 me. Also, the hardware was pretty unfamiliar to me. Overall, I had a fun time
 exploring this new avenue. After these considerations, I think I'm well prepared
 to design a stable and cost effective network!
+
+[^springfield]: https://simpsons.fandom.com/wiki/Springfield
+
+[^rpi]:
+    https://pip-assets.raspberrypi.com/categories/892-raspberry-pi-5/documents/RP-008348-DS-5-raspberry-pi-5-product-brief.pdf
+
+[^arduino]: https://docs.arduino.cc/resources/datasheets/ABX00027-datasheet.pdf
+
+[^esp]: https://documentation.espressif.com/esp32_datasheet_en.pdf
+
+[^SIMATIC]:
+    https://assets.new.siemens.com/siemens/assets/api/uuid:7b2c5580-7436-4081-9ae6-7c4eba29ddd1/simaticiot2040.pdf
+
+[^inhand]: https://alcom.nl/uploads/Inhand_IG902.pdf
+
+[^mqtt]: https://en.wikipedia.org/wiki/MQTT
