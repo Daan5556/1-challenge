@@ -2,7 +2,7 @@
 
 **Author:** Daan Eggen  
 **Date:** 28/02/2026  
-**Version: 2.0**
+**Version:** 2.0
 
 ---
 
