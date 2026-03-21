@@ -8,10 +8,15 @@ sensors:
   4:
     type: TemperatureAndHumidity
   5:
-    type: VehicleCounter
+    type: ParkingSensor
+  6:
+    type: WaterQuality
+  7:
+    type: Seismic
 
 sensor_groups:
   default_sensors: &default_sensors [1, 2, 3, 4, 5]
+  all_sensors: &all_sensors [1, 2, 3, 4, 5, 6, 7]
 
 intersections:
   MainStreet_ElmStreet:
@@ -23,26 +28,18 @@ intersections:
   ElmStreet_OakStreet:
     sensors: *default_sensors
   ElmStreet_MapleStreet:
-    sensors: *default_sensors
+    sensors: *all_sensors
   OakStreet_PineStreet:
     sensors: *default_sensors
   MapleStreet_PineStreet:
     sensors: *default_sensors
   MainStreet_IndustrialWay:
     sensors: *default_sensors
-  EvergreenTerrace_IndustrialWay:
-    sensors: *default_sensors
   MainStreet_ProspectStreet:
     sensors: *default_sensors
   ElmStreet_ProspectStreet:
-    sensors: *default_sensors
+    sensors: [5]
   OakStreet_ProspectStreet:
-    sensors: *default_sensors
-  EvergreenTerrace_TerraceLane:
-    sensors: *default_sensors
-  EvergreenTerrace_WalnutStreet:
-    sensors: *default_sensors
-  EvergreenTerrace_BirchStreet:
     sensors: *default_sensors
   MainStreet_WalnutStreet:
     sensors: *default_sensors
@@ -65,8 +62,16 @@ intersections:
   ProspectStreet_BirchStreet:
     sensors: *default_sensors
   EvergreenTerrace_CenterStreet:
-    sensors: *default_sensors
+    sensors: *all_sensors
   EvergreenTerrace_KingsStreet:
+    sensors: *default_sensors
+  EvergreenTerrace_TerraceLane:
+    sensors: *default_sensors
+  EvergreenTerrace_WalnutStreet:
+    sensors: *default_sensors
+  EvergreenTerrace_BirchStreet:
+    sensors: *default_sensors
+  EvergreenTerrace_IndustrialWay:
     sensors: *default_sensors
   IndustrialWay_CypressCreekRoad:
     sensors: *default_sensors
@@ -75,7 +80,7 @@ intersections:
   TerraceLane_OakStreet:
     sensors: *default_sensors
   TerraceLane_ElmStreet:
-    sensors: *default_sensors
+    sensors: *all_sensors
   PineStreet_WalnutStreet:
     sensors: *default_sensors
   PineStreet_BirchStreet:
