@@ -1,0 +1,89 @@
+sensors:
+  1:
+    type: TrafficCamera
+  2:
+    type: AirQuality
+  3:
+    type: Noise
+  4:
+    type: TemperatureAndHumidity
+  5:
+    type: VehicleCounter
+
+sensor_groups:
+  default_sensors: &default_sensors
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+
+intersections:
+  MainStreet_ElmStreet:
+    sensors: *default_sensors
+  MainStreet_MapleStreet:
+    sensors: *default_sensors
+  MainStreet_PineStreet:
+    sensors: *default_sensors
+  ElmStreet_OakStreet:
+    sensors: *default_sensors
+  ElmStreet_MapleStreet:
+    sensors: *default_sensors
+  OakStreet_PineStreet:
+    sensors: *default_sensors
+  MapleStreet_PineStreet:
+    sensors: *default_sensors
+  MainStreet_IndustrialWay:
+    sensors: *default_sensors
+  EvergreenTerrace_IndustrialWay:
+    sensors: *default_sensors
+  MainStreet_ProspectStreet:
+    sensors: *default_sensors
+  ElmStreet_ProspectStreet:
+    sensors: *default_sensors
+  OakStreet_ProspectStreet:
+    sensors: *default_sensors
+  EvergreenTerrace_TerraceLane:
+    sensors: *default_sensors
+  EvergreenTerrace_WalnutStreet:
+    sensors: *default_sensors
+  EvergreenTerrace_BirchStreet:
+    sensors: *default_sensors
+  MainStreet_WalnutStreet:
+    sensors: *default_sensors
+  MainStreet_BirchStreet:
+    sensors: *default_sensors
+  MainStreet_CypressCreekRoad:
+    sensors: *default_sensors
+  ElmStreet_WalnutStreet:
+    sensors: *default_sensors
+  ElmStreet_BirchStreet:
+    sensors: *default_sensors
+  OakStreet_CypressCreekRoad:
+    sensors: *default_sensors
+  MapleStreet_WalnutStreet:
+    sensors: *default_sensors
+  MapleStreet_BirchStreet:
+    sensors: *default_sensors
+  ProspectStreet_WalnutStreet:
+    sensors: *default_sensors
+  ProspectStreet_BirchStreet:
+    sensors: *default_sensors
+  EvergreenTerrace_CenterStreet:
+    sensors: *default_sensors
+  EvergreenTerrace_KingsStreet:
+    sensors: *default_sensors
+  IndustrialWay_CypressCreekRoad:
+    sensors: *default_sensors
+  TerraceLane_MapleStreet:
+    sensors: *default_sensors
+  TerraceLane_OakStreet:
+    sensors: *default_sensors
+  TerraceLane_ElmStreet:
+    sensors: *default_sensors
+  PineStreet_WalnutStreet:
+    sensors: *default_sensors
+  PineStreet_BirchStreet:
+    sensors: *default_sensors
+  MapleStreet_CypressCreekRoad:
+    sensors: *default_sensors
