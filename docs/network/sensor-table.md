@@ -1,5 +1,11 @@
 # Sensor Table
 
+**Author:** Daan Eggen  
+**Date:** 21/03/2026  
+**Version:** 1.0
+
+---
+
 This project requires almost 200 sensors spread out over the city. All of the
 edge devices connected to these sensors need to be identifiable and be
 addressable.
