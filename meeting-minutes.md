@@ -1,6 +1,6 @@
 # Meeting minutes
 
-## 17/03/2026
+17/03/2026
 
 - requirements traceability
 - Bronvermelding met APA

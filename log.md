@@ -59,4 +59,5 @@
 
 - Finished sensor table script.
 - Wrote documentation for sensor table.
-- Finished addressing document
+- Finished addressing document.
+- Wrote security analysis.
