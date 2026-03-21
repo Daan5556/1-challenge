@@ -45,3 +45,17 @@
 
 - Created sensor id script
 - Created docs for portfolio
+
+19/03/2026
+
+- Submitted Portflow with the following decisions:
+  - Requirements need traceability
+  - Source reference using APA
+  - Feedback and changes should be documented in Portflow.
+- Added citations to network analysis.
+- Added personal reflection on way of working.
+
+21/03/2026
+
+- Finished sensor table script.
+- Wrote documentation for sensor table.
