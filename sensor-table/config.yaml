@@ -11,12 +11,7 @@ sensors:
     type: VehicleCounter
 
 sensor_groups:
-  default_sensors: &default_sensors
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
+  default_sensors: &default_sensors [1, 2, 3, 4, 5]
 
 intersections:
   MainStreet_ElmStreet:
