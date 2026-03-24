@@ -38,7 +38,7 @@ intersections:
   MainStreet_ProspectStreet:
     sensors: *default_sensors
   ElmStreet_ProspectStreet:
-    sensors: [5]
+    sensors: [6]
   OakStreet_ProspectStreet:
     sensors: *default_sensors
   MainStreet_WalnutStreet:
