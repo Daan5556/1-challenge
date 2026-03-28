@@ -1,0 +1,53 @@
+name: smart-springfield-server
+services:
+  influxdb3-core:
+    container_name: influxdb3
+    image: influxdb:3-core
+    ports:
+      - 8181:8181
+    command:
+      - influxdb3
+      - serve
+      - --node-id=smart-springfield
+      - --object-store=file
+      - --data-dir=/var/lib/influxdb3/data
+      - --plugin-dir=/var/lib/influxdb3/plugins
+    volumes:
+      - influxdb3:/var/lib/influxdb3
+
+  influxdb3-ui:
+    container_name: influxdb3-explorer
+    image: influxdata/influxdb3-ui:1.6.2
+    ports:
+      - 9999:80
+    volumes:
+      - influxdb3-ui:/db
+
+  chronograf:
+    container_name: chronograf
+    image: chronograf:1.7
+    environment:
+      - INFLUXDB_V3_SUPPORT_ENABLED=true
+    ports:
+      - 8888:8888
+    volumes:
+      - chronograf:/var/lib/chronograf
+
+  telegraf:
+    container_name: telegraf
+    image: telegraf:1.38.1
+    env_file:
+      - .env
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+
+volumes:
+  influxdb3:
+  influxdb3-ui:
+  chronograf:
