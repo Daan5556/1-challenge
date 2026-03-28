@@ -1,2 +1,4 @@
 [env]
-mise = { file = ".env" }
+
+[env.mise]
+file = ".env"

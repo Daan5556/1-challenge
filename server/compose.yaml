@@ -25,7 +25,7 @@ services:
 
   chronograf:
     container_name: chronograf
-    image: chronograf:1.7
+    image: chronograf
     environment:
       - INFLUXDB_V3_SUPPORT_ENABLED=true
     ports:
