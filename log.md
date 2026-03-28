@@ -61,3 +61,13 @@
 - Wrote documentation for sensor table.
 - Finished addressing document.
 - Wrote security analysis.
+
+26/03/2026
+
+- Added evidences to portfolio.
+- Started working on Processing platform documentation.
+
+28/03/2026
+
+- Continued working on processing platform documentation.
+- Started working on Influxdb docs
