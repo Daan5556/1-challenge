@@ -71,3 +71,7 @@
 
 - Continued working on processing platform documentation.
 - Started working on Influxdb docs
+
+29/03/2026
+
+- Finished server platform docs.
