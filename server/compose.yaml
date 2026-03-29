@@ -41,12 +41,6 @@ services:
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
 
-  mosquitto:
-    container_name: mosquitto
-    image: eclipse-mosquitto
-    ports:
-      - "1883:1883"
-
 volumes:
   influxdb3:
   influxdb3-ui:

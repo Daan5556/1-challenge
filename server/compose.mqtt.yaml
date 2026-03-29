@@ -1,0 +1,12 @@
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto
+    networks:
+      - smart-springfield-server_default
+    ports:
+      - "1883:1883"
+
+networks:
+  smart-springfield-server_default:
+    external: true
