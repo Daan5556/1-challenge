@@ -22,6 +22,10 @@ services:
       - 9999:80
     volumes:
       - influxdb3-ui:/db
+    tmpfs:
+      - /app-root/config
+      - /ca-certs
+      - /etc/nginx/ssl
 
   chronograf:
     container_name: chronograf
@@ -42,6 +46,9 @@ services:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
 
 volumes:
-  influxdb3:
-  influxdb3-ui:
   chronograf:
+    name: smart-springfield-server_chronograf
+  influxdb3:
+    name: smart-springfield-server_influxdb3
+  influxdb3-ui:
+    name: smart-springfield-server_influxdb3-ui

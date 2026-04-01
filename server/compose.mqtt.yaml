@@ -1,3 +1,5 @@
+name: mqtt
+
 services:
   mosquitto:
     container_name: mosquitto
@@ -6,6 +8,9 @@ services:
       - smart-springfield-server_default
     ports:
       - "1883:1883"
+    tmpfs:
+      - /mosquitto/data
+      - /mosquitto/log
 
 networks:
   smart-springfield-server_default:

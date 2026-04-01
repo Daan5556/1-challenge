@@ -12,3 +12,9 @@
 
 - Decision matrix for advice
 - Portfolio create personal development plan.
+
+- Redundancy
+- .ENV file.
+- Context diagram.
+- Embedded software.
+- State machine diagram.
