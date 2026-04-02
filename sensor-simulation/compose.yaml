@@ -1,0 +1,35 @@
+services:
+  traffic-camera:
+    build: ./sensor-simulation
+    environment:
+      - MQTT_HOST
+      - SENSOR_TYPE=1
+      - EDGE_DEVICE_ID=ED-1022-01
+
+  noise:
+    build: ./sensor-simulation
+    environment:
+      - MQTT_HOST
+      - SENSOR_TYPE=3
+      - EDGE_DEVICE_ID=ED-1022-03
+
+  parking-sensor:
+    build: ./sensor-simulation
+    environment:
+      - MQTT_HOST
+      - SENSOR_TYPE=5
+      - EDGE_DEVICE_ID=ED-1022-05
+
+  water-quality:
+    build: ./sensor-simulation
+    environment:
+      - MQTT_HOST
+      - SENSOR_TYPE=6
+      - EDGE_DEVICE_ID=ED-1022-06
+
+  seismic:
+    build: ./sensor-simulation
+    environment:
+      - MQTT_HOST
+      - SENSOR_TYPE=7
+      - EDGE_DEVICE_ID=ED-1022-07
