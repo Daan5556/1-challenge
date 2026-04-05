@@ -1,7 +1,7 @@
 import random
 
 
-def generate_tablename(sensortype) -> str:
+def get_tablename(sensortype) -> str:
     sensortype = int(sensortype)
     match sensortype:
         case 1:

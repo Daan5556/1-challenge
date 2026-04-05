@@ -9,7 +9,7 @@ import payload
 MQTT_HOST = os.environ["MQTT_HOST"]
 EDGE_DEVICE_IDENTIFIER = os.environ["EDGE_DEVICE_ID"]
 SENSOR_TYPE = os.environ["SENSOR_TYPE"]
-TABLE_NAME = payload.generate_tablename(SENSOR_TYPE)
+TABLE_NAME = payload.get_tablename(SENSOR_TYPE)
 
 MQTT_TOPIC = f"sensors/{EDGE_DEVICE_IDENTIFIER}"
 
