@@ -75,3 +75,8 @@
 29/03/2026
 
 - Finished server platform docs.
+
+06/04/2026
+
+- Finished writing edge device design.
+- Started research DHT11
