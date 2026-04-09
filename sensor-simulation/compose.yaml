@@ -1,11 +1,4 @@
 services:
-  traffic-camera:
-    build: ./sensor-simulation
-    environment:
-      - MQTT_HOST
-      - SENSOR_TYPE=1
-      - EDGE_DEVICE_ID=ED-1022-01
-
   noise:
     build: ./sensor-simulation
     environment:

@@ -18,3 +18,9 @@
 - Context diagram.
 - Embedded software.
 - State machine diagram.
+
+07/04/2026
+
+- Autononomous device
+- Firmware should be configurable
+- Firmware should have tests
