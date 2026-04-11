@@ -1,6 +1,9 @@
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
 
+#include "config.h"
+#include "payload.h"
+
 #define DHTPIN 4
 #define DHTTYPE DHT11
 
@@ -17,10 +20,7 @@ void loop() {
   float h = dht.readHumidity();
   float t = dht.readTemperature();
 
-  Serial.print(F("Humidity: "));
-  Serial.print(h);
-  Serial.print(F("Temperature: "));
-  Serial.print(t);
+  auto payload = generatePayload(ED_ID, h, t);
 
-  Serial.println();
+  Serial.println(payload.c_str());
 }
