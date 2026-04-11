@@ -1,0 +1,23 @@
+services:
+  traffic-camera:
+    networks:
+      - smart-springfield-server_default
+  noise:
+    networks:
+      - smart-springfield-server_default
+
+  parking-sensor:
+    networks:
+      - smart-springfield-server_default
+
+  water-quality:
+    networks:
+      - smart-springfield-server_default
+
+  seismic:
+    networks:
+      - smart-springfield-server_default
+
+networks:
+  smart-springfield-server_default:
+    external: true
