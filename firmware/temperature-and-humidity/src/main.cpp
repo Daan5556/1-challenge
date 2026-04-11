@@ -12,7 +12,7 @@
 char ssid[] = SSID;
 char passPrase[] = PASS_PRASE;
 
-char mqttBroker[] = MQTT_HOST;
+char mqttHost[] = MQTT_HOST;
 char mqttTopic[] = "sensors/" ED_ID;
 
 WiFiClient wifiClient;
@@ -23,11 +23,28 @@ DHT dht(DHTPIN, DHTTYPE);
 void setup() {
   Serial.begin(9600);
 
+  while (WiFi.begin(ssid, passPrase) != WL_CONNECTED)
+    delay(5000);
+
+  Serial.print(F("Connected to WiFi with IP: "));
+  Serial.println(WiFi.localIP());
+
+  if (!mqttClient.connect(mqttHost)) {
+    Serial.print("MQTT connection failed! Error code:");
+    Serial.println(mqttClient.connectError());
+
+    while (1)
+      ;
+  }
+
+  Serial.println("Connected to the MQTT broker");
+
   dht.begin();
 }
 
 void loop() {
-  delay(2000);
+  mqttClient.poll();
+
   float h = dht.readHumidity();
   float t = dht.readTemperature();
 
