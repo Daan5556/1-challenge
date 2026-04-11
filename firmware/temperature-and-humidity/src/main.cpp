@@ -18,13 +18,17 @@ char mqttTopic[] = "sensors/" ED_ID;
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
+const long interval = 5000;
+unsigned long previousMillis = 0;
+
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
   Serial.begin(9600);
 
-  while (WiFi.begin(ssid, passPrase) != WL_CONNECTED)
+  while (WiFi.begin(ssid, passPrase) != WL_CONNECTED) {
     delay(5000);
+  }
 
   Serial.print(F("Connected to WiFi with IP: "));
   Serial.println(WiFi.localIP());
@@ -45,10 +49,20 @@ void setup() {
 void loop() {
   mqttClient.poll();
 
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis < interval) {
+    return;
+  }
+
+  previousMillis = currentMillis;
+
   float h = dht.readHumidity();
   float t = dht.readTemperature();
 
   auto payload = generatePayload(ED_ID, h, t);
 
-  Serial.println(payload.c_str());
+  mqttClient.beginMessage(mqttTopic);
+  mqttClient.print(payload.c_str());
+  mqttClient.endMessage();
 }
