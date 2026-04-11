@@ -1,11 +1,22 @@
 #include <Adafruit_Sensor.h>
+#include <ArduinoMqttClient.h>
 #include <DHT.h>
+#include <WiFi.h>
 
 #include "config.h"
 #include "payload.h"
 
 #define DHTPIN 4
 #define DHTTYPE DHT11
+
+char ssid[] = SSID;
+char passPrase[] = PASS_PRASE;
+
+char mqttBroker[] = MQTT_HOST;
+char mqttTopic[] = "sensors/" ED_ID;
+
+WiFiClient wifiClient;
+MqttClient mqttClient(wifiClient);
 
 DHT dht(DHTPIN, DHTTYPE);
 
