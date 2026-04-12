@@ -80,3 +80,11 @@
 
 - Finished writing edge device design.
 - Started research DHT11
+
+11/04/2026
+
+- Implemented firmware.
+
+12/04/2026
+
+- Uploaded docs
