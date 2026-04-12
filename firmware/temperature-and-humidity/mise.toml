@@ -1,2 +1,3 @@
-[tasks.test]
-run = "pio test -e native"
+[tasks]
+test = { run = "pio test -e native" }
+run = { run = "pio run -e esp32dev" }

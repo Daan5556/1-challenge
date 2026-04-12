@@ -10,6 +10,7 @@
             "includePath": [
                 "/home/daan/School/1-challenge/firmware/temperature-and-humidity/include",
                 "/home/daan/School/1-challenge/firmware/temperature-and-humidity/src",
+                "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                 "/home/daan/School/1-challenge/firmware/temperature-and-humidity/.pio/libdeps/esp32dev/ArduinoMqttClient/src",
                 "/home/daan/School/1-challenge/firmware/temperature-and-humidity/.pio/libdeps/esp32dev/DHT sensor library",
                 "/home/daan/School/1-challenge/firmware/temperature-and-humidity/.pio/libdeps/esp32dev/Adafruit Unified Sensor",
@@ -238,7 +239,6 @@
                 "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/USB/src",
                 "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/Update/src",
                 "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
-                "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                 "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src",
                 "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
                 "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
@@ -249,6 +249,7 @@
                 "path": [
                     "/home/daan/School/1-challenge/firmware/temperature-and-humidity/include",
                     "/home/daan/School/1-challenge/firmware/temperature-and-humidity/src",
+                    "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                     "/home/daan/School/1-challenge/firmware/temperature-and-humidity/.pio/libdeps/esp32dev/ArduinoMqttClient/src",
                     "/home/daan/School/1-challenge/firmware/temperature-and-humidity/.pio/libdeps/esp32dev/DHT sensor library",
                     "/home/daan/School/1-challenge/firmware/temperature-and-humidity/.pio/libdeps/esp32dev/Adafruit Unified Sensor",
@@ -477,7 +478,6 @@
                     "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/USB/src",
                     "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/Update/src",
                     "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
-                    "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                     "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src",
                     "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
                     "/home/daan/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
