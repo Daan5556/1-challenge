@@ -26,15 +26,20 @@ DHT dht(DHTPIN, DHTTYPE);
 void setup() {
   Serial.begin(9600);
 
-  while (WiFi.begin(ssid, passPrase) != WL_CONNECTED) {
-    delay(5000);
+  Serial.print(F("Trying to connect to SSID: "));
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, passPrase);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
   }
 
   Serial.print(F("Connected to WiFi with IP: "));
   Serial.println(WiFi.localIP());
 
   if (!mqttClient.connect(mqttHost)) {
-    Serial.print("MQTT connection failed! Error code:");
+    Serial.print(F("MQTT connection failed! Error code: "));
     Serial.println(mqttClient.connectError());
 
     while (1)
@@ -65,4 +70,7 @@ void loop() {
   mqttClient.beginMessage(mqttTopic);
   mqttClient.print(payload.c_str());
   mqttClient.endMessage();
+
+  Serial.println(payload.c_str());
+  Serial.println(mqttTopic);
 }

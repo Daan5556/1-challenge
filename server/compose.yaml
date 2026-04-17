@@ -45,6 +45,15 @@ services:
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
 
+  kapacitor:
+    container_name: kapacitor
+    image: kapacitor
+    ports:
+      - "9092:9092"
+    volumes:
+      - kapacitor:/var/lib/kapacitor
+      - ./kapacitor.conf:/etc/kapacitor/kapacitor.conf:ro
+
 volumes:
   chronograf:
     name: smart-springfield-server_chronograf
@@ -52,3 +61,5 @@ volumes:
     name: smart-springfield-server_influxdb3
   influxdb3-ui:
     name: smart-springfield-server_influxdb3-ui
+  kapacitor:
+    name: smart-springfield-server_kapacitor
