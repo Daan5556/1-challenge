@@ -2,9 +2,23 @@
 
 **Author:** Daan Eggen  
 **Date:** 15/04/2026  
-**Version:** 1.0
+**Version:** 2.0
+
+| Term           | Meaning                                                                 |
+| -------------- | ----------------------------------------------------------------------- |
+| MQTT           | A lightweight messaging protocol commonly used for IoT devices.         |
+| TLS            | Transport Layer Security, used to protect data sent over the network.   |
+| Gateway        | A device or service that connects nearby sensors to the central system. |
+| Edge device    | A sensor node or small device that collects and sends measurements.     |
+| Docker Compose | A tool for running multiple related containers together.                |
+| ESP32          | A microcontroller often used for connected sensor and IoT projects.     |
+| DHT sensor     | A sensor used to measure temperature and humidity.                      |
+| Line protocol  | A text-based format for writing structured measurement data.            |
+| Time-series DB | A database optimized for storing measurements over time.                |
 
 ---
+
+## Abbreviations and terms
 
 In this document, I will describe the general requirements for the Smart
 Springfield infrastructure from a user perspective. The goal is not to describe
@@ -95,9 +109,9 @@ infrastructure from a different angle.
 
 ## Quality requirements
 
-- The infrastructure should be stable enough for a city monitoring use case.
-  The network should maintain at least 99% availability per calendar month,
-  measured by automated checks against the broker and important endpoints.
+- The infrastructure should be stable enough for a city monitoring use case. The
+  network should maintain at least 99% availability per calendar month, measured
+  by automated checks against the broker and important endpoints.
 - The system should be easy to reproduce. Docker Compose is used where
   practical, because the server platform consists of multiple services that need
   to run together.
