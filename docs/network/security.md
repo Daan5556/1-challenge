@@ -2,7 +2,7 @@
 
 **Author:** Daan Eggen  
 **Date:** 21/03/2026  
-**Version:** 1.0
+**Version:** 2.0
 
 ---
 
@@ -51,6 +51,12 @@ If the network is compromised, the attacker cannot access any other
 If an attacker is on the network, they can inspect traffic, exposing potential
 sensitive data. They can also employ a "man in the middle" attack by
 impersonating the broker.
+
+TLS is the modern successor to SSL. SSL stands for `Secure Sockets Layer` and is
+a protocol that was originally used to secure network communication. In
+practice, people still often say "SSL", even when they actually mean TLS. The
+main purpose is the same: encrypt traffic and help clients verify that they are
+talking to the real server.
 
 TLS tackles both of these risks. The broker will present a signed certificate to
 the clients, proving identity. The traffic will also be encrypted, mitigating
