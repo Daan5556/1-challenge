@@ -2,7 +2,7 @@
 
 **Author:** Daan Eggen  
 **Date:** 28/03/2026  
-**Version:** 1.0
+**Version:** 2.0
 
 ---
 
@@ -10,6 +10,10 @@ In this document, I describe the concrete deployment of the server platform. In
 the previous "Server Architecture" document, I already selected a self-hosted
 InfluxData-based stack. Here, I translate that decision into the services,
 configuration files and data flow that are implemented in `server/`.
+
+The goal of this document is to have a well defined implementation strategy, as
+well as showing that I'm capable of making well thought out design decisions for
+a server platform.
 
 ## Deployment strategy
 
@@ -269,7 +273,8 @@ because this deployment uses InfluxDB 3 instead of an older 1.x or 2.x server.
 Chronograf stores its own configuration in a named volume so dashboards and
 connections survive container restarts.
 
-![dashboard](../assets/chronograf.png)
+![dashboard](../assets/chronograf.png) **Demonstration of the Chronograf
+platform.**
 
 Chronograf is published on port `8888`, making it accessible from the host web
 browser.
